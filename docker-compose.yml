@@ -1,0 +1,13 @@
+version: "2"
+services:
+  rulio:
+    image: local.registry/rulio:1.0.0
+    links:
+      - db
+    command: ["-storage", "cassandra", "-storage-config", "db"]
+    ports:
+      - "8001:8001"
+  db:
+    image: cassandra:3.11.1
+    volumes:
+      - ./data:/var/lib/cassandra

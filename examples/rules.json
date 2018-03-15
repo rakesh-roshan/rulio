@@ -1,0 +1,16 @@
+{
+  "rule": {
+    "when": {
+      "pattern": {"speed": "?s", "battery_level": "?m"}
+    },
+    "condition": {
+      "and": [
+        {"pattern": {"speed_limit": "?l"}},
+        {"pattern": {"battery_level": "?b"}},
+        {"code": "(s > l) || (m <= b)"}
+      ]},
+    "action": {
+      "code":  "var msg = ''; if(s > l) { msg += 'Overspeeding ';} if(m <= b){msg += (' Low Battery');} Env.out(msg)"
+    }
+  }
+}

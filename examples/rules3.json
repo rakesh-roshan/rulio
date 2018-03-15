@@ -1,0 +1,14 @@
+{"rule":
+ {
+   "when":
+   {
+     "pattern":{"visitor":"?who"}, "location":"here"
+   },
+   "condition":{
+     "and":[
+       {"pattern":{"locale":"?who","temp":"?temp"},
+        "locations":["http://localhost:6666/facts/search"]},
+       {"code":"console.log('temp: ' + temp); 0 < temp"}
+     ]
+   },
+   "action":{"code":"Env.out('warm enough')"}}}

@@ -1,0 +1,12 @@
+{"rule": {
+  "when":{
+    "pattern":{
+      "wants":"?x"}},
+  "condition":{
+    "and": [
+      {"pattern":{"have":"?y", "c": "?z"}},
+      {"code": "x > (parseInt(z) + parseInt(y))"}
+    ]
+  },
+  "action":{
+    "code":"var msg = 'eat ' + x * 3; console.log(msg); msg;"}}}
